@@ -3,6 +3,8 @@ async function select(id){
     const user = await res.json();
     $("#firstName").val(user.firstName);
     $("#lastName").val(user.lastName);
+    $("#phoneNumber").val(user.phoneNumber);
+    $("#email").val(user.email);
     $("#id").val(user.id);
 }
 
@@ -12,7 +14,6 @@ async function deleteContact(id){
     });
     console.log(res);
     updateContacts();
-
 }
 
 async function createNew(){
@@ -34,6 +35,8 @@ async function submitForm(event) {
     event.preventDefault();
     const firstName = $("#firstName").val();
     const lastName = $("#lastName").val();
+    const phoneNumber = $("#phoneNumber").val();
+    const email = $("#email").val();
     const id = $("#id").val();
     const res = await fetch(`/api/users/${id}`, {
         method: 'POST',
@@ -41,7 +44,7 @@ async function submitForm(event) {
             'Accept': 'application/json',
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify({ firstName: firstName, lastName: lastName })
+        body: JSON.stringify({ firstName: firstName, lastName: lastName, phoneNumber: phoneNumber, email: email })
     });
     console.log(res);
     updateContacts();
