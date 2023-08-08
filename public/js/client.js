@@ -39,7 +39,7 @@ async function updateContacts() {
     createNew()
     for (const user of users) {
         $("#theList").append(
-            `<div class="contact-card border rounded border-1 border-gray mb-1 p-1">
+            `<div class="hover-shadow contact-card border rounded border-1 border-gray mb-1 p-1">
                 <div onclick="select(${user.id})" class="d-inline">
                     <img class="mx-1" src="/api/avatar?name=${user.firstName[0]}${user.lastName == '' ? "" : user.lastName[0]}">
                     ${user.firstName} ${user.lastName}
