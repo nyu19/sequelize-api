@@ -30,11 +30,12 @@ async function updateContacts() {
     $("#theList").html("");
     for (const user of users) {
         $("#theList").append(
-            `<div>
-                <a href="#" onclick="select(${user.id})">${user.firstName} ${user.lastName}</a>
-                <button onclick="deleteContact(${user.id})">
-                    x
-                </button>
+            `<div class="contact-card border rounded border-2 border-gray p-1">
+                <div onclick="select(${user.id})" class="d-inline">
+                    <img src="...">
+                    ${user.firstName} ${user.lastName}
+                </div>
+                <button onclick="deleteContact(${user.id})" type="button" class="btn p-1"><i class="bi bi-x-lg"></i></button>
             </div>`
         )
     }
