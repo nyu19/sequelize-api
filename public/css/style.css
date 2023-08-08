@@ -2,5 +2,14 @@ body{
     padding: 0.5em;
 }
 .contact-card{
-    margin: 3px;
+    display: flex;
+    justify-content: space-between;
+}
+.invalid-feedback{
+    display: inline-block;
+    visibility: hidden;
+}
+
+#theList{
+    margin-right: 10%;
 }

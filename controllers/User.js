@@ -20,7 +20,7 @@ const UserCreate = async (req, res)=>{
 
 const UserUpdate = async (req, res)=>{
     const id = req.params.id;
-    const users = await User.findAll({where:{id:id}});
+    const users = await User.findAll({where: {id:id}});
     const user = users[0];
     await user.update(req.body);
     await user.save();
