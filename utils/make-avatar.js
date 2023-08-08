@@ -4,9 +4,9 @@ import {getFontColor, getRandomBackground} from './color.js'
 const validateData = (data) => {
     let validData =  {
         name: "NU",
-        fontface: "Segeo UI",
+        fontface: "Courier",
         fontcolor: "",
-        fontstyle: "",
+        fontstyle: "bold",
         bgcolor: getRandomBackground(), 
         size: 48,
         fontsize: 0.5, 

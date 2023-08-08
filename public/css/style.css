@@ -1,5 +1,8 @@
 body{
     padding: 0.5em;
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
 }
 .contact-card{
     display: flex;

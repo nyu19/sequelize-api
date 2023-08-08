@@ -60,9 +60,8 @@ async function submitForm(event) {
 
     if (firstName == "" || (email == "" && (phoneNumber == "" || phoneNumber.length != 10))){
         firstName == "" ? $("#firstName").addClass("is-invalid") : $("#firstName").addClass("is-valid")
-        email == "" ? $("#email").addClass("is-invalid") : $("#email").addClass("is-valid")
-        phoneNumber == "" || phoneNumber.length != 10 ? $("#phoneNumber").addClass("is-invalid") : $("#phoneNumber").addClass("is-valid")
-        
+        email == "" ? phoneNumber.length != 0 ? false : $("#email").addClass("is-invalid") : $("#email").addClass("is-valid")
+        phoneNumber == "" || phoneNumber.length != 10 ? email.length != 0 ? false: $("#phoneNumber").addClass("is-invalid") : $("#phoneNumber").addClass("is-valid")
         return 
     }
 
