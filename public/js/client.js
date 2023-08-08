@@ -19,6 +19,8 @@ async function deleteContact(id){
 async function createNew(){
     $("#firstName").val("");
     $("#lastName").val("");
+    $("#phoneNumber").val("");
+    $("#email").val("");
     $("#id").val("");
 }
 
@@ -27,7 +29,14 @@ async function updateContacts() {
     const users = await res.json();
     $("#theList").html("");
     for (const user of users) {
-        $("#theList").append(`<p><a href="#" onclick="select(${user.id})">${user.firstName} ${user.lastName}</a><button onclick="deleteContact(${user.id})">x</button></p>`)
+        $("#theList").append(
+            `<div>
+                <a href="#" onclick="select(${user.id})">${user.firstName} ${user.lastName}</a>
+                <button onclick="deleteContact(${user.id})">
+                    x
+                </button>
+            </div>`
+        )
     }
 }
 

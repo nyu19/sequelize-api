@@ -1,5 +1,9 @@
-import { Sequelize, DataTypes, Model } from 'sequelize';
-const sequelize = new Sequelize('sqlite::memory:');
+import { Sequelize, Model } from 'sequelize';
+import { DataTypes } from 'sequelize';
+const sequelize = new Sequelize({
+  dialect: 'sqlite',
+  storage: './data/data.db'
+});
 
 class User extends Model {}
 
@@ -25,6 +29,8 @@ User.init({
   sequelize, // We need to pass the connection instance
   modelName: 'User' // We need to choose the model name
 });
-await User.sync();
+await User.sync(() => {
+  console.log("DB is ready");
+});
 
 export { User };
